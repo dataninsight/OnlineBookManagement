@@ -1,1 +1,1 @@
-# SQLWorkshop
+# SQLProjects
