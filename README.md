@@ -1,4 +1,6 @@
-# Online Book Management App: ETL Process and Data Analytics with SQL and Power BI
+# Online Book Management App
+
+ETL Process and Data Analytics with SQL and Power BI
 Overview:
 I recently developed an Online Book Management App that seamlessly integrates data from various sources, undergoes Extract, Transform, Load (ETL) processes, and utilizes Power BI for advanced data analytics and visualization. This project is a testament to the power of ETL and data analytics in driving meaningful insights for decision-makers.
 
