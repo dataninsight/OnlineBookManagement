@@ -20,7 +20,7 @@ I recently developed an Online Book Management App that seamlessly integrates da
 
 ### 1. Star Schema
 - The data is organized in a Star Schema, ensuring efficiency in querying and enabling quick access to insightful information.
-- ![Schema of Online Book Management App](images/project-logo.png)
+- ![Schema of Online Book Management App](schemadesign/StarSchemaofOnlineBookMgmt.PNG)
 
 ### 2. Power BI Integration
 - Transformed data seamlessly imported into Power BI, a powerful tool for interactive and visually appealing reports and dashboards.
