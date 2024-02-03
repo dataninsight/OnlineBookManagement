@@ -37,6 +37,4 @@ I recently developed an Online Book Management App that seamlessly integrates da
 
 This Online Book Management App showcases the seamless integration of ETL processes and data analytics with Power BI. By providing clear insights into profits by publisher, author, and category, the application empowers stakeholders with actionable intelligence, making it a valuable asset in the realm of online book management.
 
-Explore the live demo and visualizations on GitHub: [GitHub Repository Link]
-
 \#DataAnalytics #PowerBI #ETL #OnlineBookManagement #DataVisualization
