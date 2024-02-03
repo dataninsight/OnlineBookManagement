@@ -1,4 +1,6 @@
-# Online Book Management App: ETL Process and Data Analytics with Power BI
+# Online Book Management App
+
+## ETL Process and Data Analytics with SQL and Power BI
 
 ## Overview
 
