@@ -5,13 +5,11 @@ echo ""
 echo "Starting script execution..."
 
 # ----- Set REGION and PROJECT ID -----
-REGION="europe-west1"
-ID="qwiklabs-gcp-01-03446d1c9018"
+REGION="us-central1"
+ID="qwiklabs-gcp-04-0348f4b482d8"
 
 # ----- Create GenerateImage.py -----
 cat > GenerateImage.py <<EOF_END
-import argparse
-
 import vertexai
 from vertexai.preview.vision_models import ImageGenerationModel
 
@@ -31,10 +29,10 @@ def generate_image(
     return images
 
 generate_image(
-    project_id='$ID',
-    location='$REGION',
-    output_file='image.jpeg',
-    prompt='Create an image of a cricket ground in the heart of Los Angeles',
+    project_id="$ID",
+    location="$REGION",
+    output_file="image.jpeg",
+    prompt="Create an image of a cricket ground in the heart of Los Angeles",
 )
 EOF_END
 
