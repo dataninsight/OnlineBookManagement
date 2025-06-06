@@ -47,7 +47,7 @@ from vertexai.generative_models import GenerativeModel, Part
 def analyze_image(project_id: str, location: str, image_path: str):
     try:
         vertexai.init(project=project_id, location=location)
-        model = GenerativeModel("gemini-2.0-flash-001")
+        model = GenerativeModel("gemini-2.0-flash-001")  # ✅ Correct usage, no from_pretrained
         parts = [
             Part.from_file(image_path, mime_type="image/jpeg"),
             "Generate birthday wishes based on the image."
