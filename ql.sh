@@ -47,14 +47,14 @@ from vertexai.generative_models import GenerativeModel, Part
 def analyze_image(project_id: str, location: str, image_path: str):
     try:
         vertexai.init(project=project_id, location=location)
-        model = GenerativeModel.from_pretrained("gemini-2.0-flash-001")
+        model = GenerativeModel("gemini-2.0-flash-001")
         parts = [
             Part.from_file(image_path, mime_type="image/jpeg"),
             "Generate birthday wishes based on the image."
         ]
-        response = model.generate_content(parts, streaming=True)
+        response = model.generate_content(parts, stream=True)
         print("Generated birthday wishes:")
-        for chunk in response.stream():
+        for chunk in response:
             print(chunk.text, end="", flush=True)
         print()
     except Exception as e:
