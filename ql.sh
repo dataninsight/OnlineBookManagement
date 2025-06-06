@@ -26,6 +26,7 @@ def generate_image(
         add_watermark=False,
     )
     images[0].save(location=output_file)
+    print(f"Image saved to {output_file}")
     return images
 
 generate_image(
@@ -36,17 +37,18 @@ generate_image(
 )
 EOF_END
 
-# ----- Run GenerateImage.py -----
+echo "Running GenerateImage.py..."
 /usr/bin/python3 /home/student/GenerateImage.py
+echo "GenerateImage.py execution completed."
 
-# ----- Create genai.py -----
-cat > genai.py <<EOF_END
+# ----- Create genai1.py -----
+cat > genai1.py <<EOF_END
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 
 def generate_text(project_id: str, location: str) -> str:
     vertexai.init(project=project_id, location=location)
-    multimodal_model = GenerativeModel("gemini-1.0-pro-vision")
+    multimodal_model = GenerativeModel("gemini-2.0-flash-lite")
     response = multimodal_model.generate_content(
         [
             Part.from_uri(
@@ -60,12 +62,19 @@ def generate_text(project_id: str, location: str) -> str:
 project_id = "$ID"
 location = "$REGION"
 response = generate_text(project_id, location)
+print("Generated text response:")
 print(response)
 EOF_END
 
-# ----- Run genai.py -----
-/usr/bin/python3 /home/student/genai.py
+echo "Running genai1.py..."
+/usr/bin/python3 /home/student/genai1.py
+echo "genai1.py execution completed."
 
-# ----- Optional: Wait and run again -----
+# ----- Optional: Wait and run genai1.py again -----
+echo "Sleeping for 30 seconds before rerun..."
 sleep 30
-/usr/bin/python3 /home/student/genai.py
+echo "Re-running genai1.py..."
+/usr/bin/python3 /home/student/genai1.py
+echo "Second genai1.py execution completed."
+
+echo "Script finished."
