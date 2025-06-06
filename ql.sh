@@ -44,4 +44,36 @@ cat > AnalyzeImage.py <<EOF_END
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 
-def analyze_image(project_id: str, location: str
+def analyze_image(project_id: str, location: str, image_path: str):
+    try:
+        vertexai.init(project=project_id, location=location)
+        model = GenerativeModel("gemini-2.0-flash-001")
+
+        with open(image_path, "rb") as img_file:
+            image_data = img_file.read()
+
+        parts = [
+            Part.from_data(data=image_data, mime_type="image/jpeg"),
+            "Generate birthday wishes based on the image."
+        ]
+
+        response = model.generate_content(parts, stream=True)
+        print("Generated birthday wishes:")
+        for chunk in response:
+            print(chunk.text, end="", flush=True)
+        print()
+    except Exception as e:
+        print(f"Error analyzing image: {e}")
+
+analyze_image(
+    project_id="$ID",
+    location="$REGION",
+    image_path="image.jpeg"
+)
+EOF_END
+
+echo "Running AnalyzeImage.py..."
+/usr/bin/python3 /home/student/AnalyzeImage.py
+echo "AnalyzeImage.py execution completed."
+
+echo "Script finished."
