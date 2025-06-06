@@ -4,8 +4,8 @@ echo ""
 echo "Starting script execution..."
 
 # ----- Set REGION and PROJECT ID -----
-REGION="us-central1"
-ID="qwiklabs-gcp-04-0348f4b482d8"
+REGION="europe-west1"
+ID="qwiklabs-gcp-01-4f17e523de19"
 
 # ----- Task 1: Create GenerateImage.py -----
 cat > GenerateImage.py <<EOF_END
